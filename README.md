@@ -22,10 +22,12 @@ cargo build --release
 # Release WASM
 cargo build --release --target wasm32-unknown-unknown
 wasm-bindgen --target web --out-dir web/pkg --out-name texture-bevy-egui-app target/wasm32-unknown-unknown/release/texture-bevy-egui-app.wasm
+
 python3 -m http.server 8080
+# Open: http://localhost:8080/web/
 ```
 
-Open: http://localhost:8080/web/
+
 
 ### License
 
