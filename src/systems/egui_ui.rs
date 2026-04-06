@@ -27,7 +27,7 @@ pub fn egui_controls_ui(
             });
         });
 
-    let controls_panel = egui::SidePanel::left("controls_panel")
+    egui::SidePanel::left("controls_panel")
         .resizable(false)
         .exact_width(EGUI_LEFT_PANEL_WIDTH)
         .show_separator_line(false)
@@ -103,7 +103,6 @@ pub fn egui_controls_ui(
 
     // Hard split: world starts exactly where the fixed left column ends.
     let viewport_rect = ctx.viewport_rect();
-    let _ = controls_panel; // Keep response alive for egui layout execution order.
     layout_state.viewport_left = EGUI_LEFT_PANEL_WIDTH;
     layout_state.viewport_top = title_bar.response.rect.bottom();
     layout_state.viewport_right = viewport_rect.right();
